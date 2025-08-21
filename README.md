@@ -15,22 +15,21 @@ This site demonstrates the HTML/CSS concepts from COMP208:
 - `style.css`
 - `Images/` (site assets)
 
-Commit Message 
+Commit Messages...
+
 about.html — added my short blurb + interests
-Commit message: “Added About blurb and interests”
+Commit message: added About blurb and interests
 
 experience.html — fix the heading typo + responsibilities list
-Commit message: “Fix Experience heading + tidy responsibilities list”
+Commit message: Fix Experience heading + tidy responsibilities list
 
 projects.html — add 2 short project blurbs
+Commit message: 
 
-Commit message: “Add project cards and blurbs”
 Polish global CSS: nav, cards, hero image, table
-
-- Add color variables and consistent typography
-- Style nav (hover + .active state)
-- Implement card grid for Projects
+- Add color and consistent font
+- Style nav*
 - Make profile image circular and responsive
-- Improve spacing and responsive layout
-- Add table borders/overflow wrap
-- Add comments; remove unused rules
+- Improve spacing and  layout
+- Add table borders
+- Add comments
