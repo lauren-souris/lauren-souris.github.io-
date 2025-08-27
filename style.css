@@ -1,9 +1,9 @@
 :root {
-  --text:#111827;
+  --text:#05070c;
   --muted:#6b7280;
   --line:#e5e7eb;
   --card:#ffffff;
-  --bg:#f7f7fb;
+  --bg:#cadcc3;
   --brand:#111827;
 }
 
@@ -19,7 +19,7 @@ body {
 
 /* Header + nav */
 header {
-  background: #fff;
+  background: #5b7774;
   border-bottom: 1px solid var(--line);
   position: sticky; top: 0; z-index: 50;
 }
@@ -35,9 +35,9 @@ nav a {
   padding: .5rem .75rem; border-radius: .6rem;
 }
 nav a:hover { background: var(--line); }
-nav a.active { background: var(--brand); color: #fff; }
+nav a.active { background: var(--brand); color: #ffffff; }
 
-/* Layout */
+/* Main general Layout */
 main { max-width: 1100px; margin: 2rem auto; padding: 0 1.25rem; }
 footer {
   margin-top: 3rem; background: #fff; border-top: 1px solid var(--line);
@@ -60,7 +60,7 @@ footer {
 
 /* Lists, links, images */
 img { max-width: 100%; height: auto; display: block; }
-a.inline { color: #2563eb; }
+a.inline { color: #ffffff; }
 
 /* Tables */
 .table-wrap { overflow-x: auto; }
@@ -68,8 +68,37 @@ table { width: 100%; border-collapse: collapse; }
 th, td { padding: .75rem; border: 1px solid var(--line); text-align: left; }
 thead th { background: #fafafa; }
 
-/* Simple flex gallery for projects */
+/* projects */
 .projects { display: flex; flex-wrap: wrap; gap: 1rem; }
 .project-card { flex: 1 1 300px; }
 .project-card h3 { margin-top: .25rem; }
 .tag { display: inline-block; padding: .15rem .5rem; border-radius: .5rem; background: #eef2ff; font-size: .85rem; }
+/* Project images: rounder corners for images /
+.project-card img {
+  border-radius: 16px;   /* Adjusted for a more modernnn look */
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Spacing for checklist on Contact Page  */
+fieldset { border: 1px solid var(--line); border-radius: .6rem; padding: .75rem; margin-bottom: 1rem; }
+legend { font-weight: 600; padding: 0 .25rem; }
+fieldset label { display: block; margin-bottom: .35rem; }
+
+/* Contact Text Boxes Layout */
+/* Stacked form layout (labels above inputs) */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-bottom: 1rem;
+}
+
+input, textarea, select, button {
+  font: inherit;
+  padding: .65rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  width: 100%;
+}
+
