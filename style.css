@@ -1,104 +1,156 @@
-:root {
-  --text:#05070c;
+/*Laurne Souris site styles*/
+
+/* Design main */
+:root{
+  --text: #05070c;
   --muted:#6b7280;
-  --line:#e5e7eb;
+  --line: #e5e7eb;
+
   --card:#ffffff;
-  --bg:#cadcc3;
-  --brand:#111827;
+  --bg:  #cadcc3;
+
+  --brand:#111827;            /* used for accents if needed */
+  --header-bg:#5b7774;        /* top bar background */
+  --link:#437a49;             /* default page link colour */
+  --nav-link:#ffffff;         /* top nav link colour */
+  --nav-active-pill: rgba(255,255,255,.16);
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0;
+/* --- Base --- */
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
 }
 
-/* Header + nav */
-header {
-  background: #5b7774;
-  border-bottom: 1px solid var(--line);
-  position: sticky; top: 0; z-index: 50;
+/* ===============================
+   Header + Navigation
+   =============================== */
+header{
+  background:var(--header-bg);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:50;
 }
-.nav {
-  max-width: 1100px; margin: 0 auto;
-  padding: 0.85rem 1.25rem;
-  display: flex; align-items: center; justify-content: space-between;
+.nav{
+  max-width:1100px; margin:0 auto;
+  padding:.85rem 1.25rem;
+  display:flex; align-items:center; justify-content:space-between;
 }
-.brand { font-weight: 700; letter-spacing: .4px; }
-nav ul { list-style: none; display: flex; gap: .5rem; margin: 0; padding: 0; }
-nav a {
-  text-decoration: none; color: var(--text);
-  padding: .5rem .75rem; border-radius: .6rem;
-}
-nav a:hover { background: var(--line); }
-nav a.active { background: var(--brand); color: #ffffff; }
+.brand{ font-weight:700; letter-spacing:.4px; }
+nav ul{ list-style:none; display:flex; gap:.5rem; margin:0; padding:0; }
 
-/* Main general Layout */
-main { max-width: 1100px; margin: 2rem auto; padding: 0 1.25rem; }
-footer {
-  margin-top: 3rem; background: #fff; border-top: 1px solid var(--line);
-  text-align: center; padding: 1rem;
-  color: var(--muted);
+/* Top-nav links (white) */
+nav a{
+  text-decoration:none;
+  color:var(--nav-link);
+  padding:.5rem .75rem;
+  border-radius:.6rem;
+}
+nav a:hover,
+nav a:focus{ text-decoration:underline; }
+nav a.active{
+  color:#fff;
+  background:var(--nav-active-pill);
 }
 
-/* Reusable UI */
-.grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  padding: 1rem;
-  flex: 1 1 300px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+/* ===============================
+   Main layout + footer
+   =============================== */
+main{ max-width:1100px; margin:2rem auto; padding:0 1.25rem; }
+footer{
+  margin-top:3rem; background:#fff; border-top:1px solid var(--line);
+  text-align:center; padding:1rem; color:var(--muted);
 }
-.hero { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
-.hero img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; }
 
-/* Lists, links, images */
-img { max-width: 100%; height: auto; display: block; }
-a.inline { color: #ffffff; }
+/* ===============================
+   Reusable UI
+   =============================== */
+.grid{ display:flex; flex-wrap:wrap; gap:1rem; }
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:1rem;
+  padding:1rem;
+  flex:1 1 300px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+.hero{ display:flex; gap:2rem; align-items:center; flex-wrap:wrap; }
+.hero img{ width:220px; height:220px; border-radius:50%; object-fit:cover; }
+
+/* Images */
+img{ max-width:100%; height:auto; display:block; }
+
+/* Page links (green) — outside the top nav */
+main a,
+.card a,
+a.inline{
+  color:var(--link);
+}
+main a:hover,
+main a:focus{ text-decoration:underline; }
 
 /* Tables */
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: .75rem; border: 1px solid var(--line); text-align: left; }
-thead th { background: #fafafa; }
+.table-wrap{ overflow-x:auto; }
+table{ width:100%; border-collapse:collapse; }
+th, td{ padding:.75rem; border:1px solid var(--line); text-align:left; }
+thead th{ background:#fafafa; }
 
-/* projects */
-.projects { display: flex; flex-wrap: wrap; gap: 1rem; }
-.project-card { flex: 1 1 300px; }
-.project-card h3 { margin-top: .25rem; }
-.tag { display: inline-block; padding: .15rem .5rem; border-radius: .5rem; background: #eef2ff; font-size: .85rem; }
-/* Project images: rounder corners for images /
-.project-card img {
-  border-radius: 16px;   /* Adjusted for a more modernnn look */
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* Spacing for checklist on Contact Page  */
-fieldset { border: 1px solid var(--line); border-radius: .6rem; padding: .75rem; margin-bottom: 1rem; }
-legend { font-weight: 600; padding: 0 .25rem; }
-fieldset label { display: block; margin-bottom: .35rem; }
-
-/* Contact Text Boxes Layout */
-/* Stacked form layout (labels above inputs) */
-.form-row {
-  display: flex;
-  flex-direction: column;
-  gap: .35rem;
-  margin-bottom: 1rem;
+/* ===============================
+   Projects / Resources
+   =============================== */
+.projects{ display:flex; flex-wrap:wrap; gap:1rem; }
+.project-card{ flex:1 1 300px; }
+.project-card h3{ margin-top:.25rem; }
+.tag{
+  display:inline-block; padding:.15rem .5rem; border-radius:.5rem;
+  background:#eef2ff; font-size:.85rem;
 }
 
-input, textarea, select, button {
-  font: inherit;
-  padding: .65rem .75rem;
-  border: 1px solid var(--line);
-  border-radius: .6rem;
-  width: 100%;
+/* Project images: rounded edgess */
+.project-card img{
+  border-radius:16px;     /* tweak 8–24px to taste */
+  display:block;
+  width:100%;
+  height:auto;
 }
 
+/* ===============================
+   Forms (Contact)
+   =============================== */
+fieldset{
+  border:1px solid var(--line);
+  border-radius:.6rem;
+  padding:.75rem;
+  margin-bottom:1rem;
+}
+legend{ font-weight:600; padding:0 .25rem; }
+fieldset label{ display:block; margin-bottom:.35rem; }
+
+/* Stacked form layout: label above input */
+.form-row{
+  display:flex; flex-direction:column; gap:.35rem;
+  margin-bottom:1rem;
+}
+input, textarea, select, button{
+  font:inherit;
+  padding:.65rem .75rem;
+  border:1px solid var(--line);
+  border-radius:.6rem;
+  width:100%;
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--link);
+  outline-offset:2px;
+}
+button{
+  background:var(--link);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
