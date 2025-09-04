@@ -12,78 +12,90 @@
       <div class="brand">Lauren Souris — Teaching Portfolio</div>
       <nav aria-label="Primary">
         <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="experience.html">Experience</a></li>
-  <li><a href="projects.html">Projects</a></li>
-  <li><a href="resources.html">Resources</a></li>
-  <li><a href="resume.html">Resume</a></li>
-  <li><a href="philosophy.html">Philosophy</a></li>
-  <li><a href="contact.html" class="active">Contact</a></li>
-</ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section>
+    <section class="section">
       <h1>Contact</h1>
-      </section>
-<p>If you have any queries or job availabilities, please tick any areas that interest you below, so that I can best respond and send through the best suited information. Thank you!</p>
-</p>
-      <ul>
-      </ul>
+      <p>If you have any queries or job availabilities, please tick any areas that interest you below so I can respond with the most helpful information. Thank you!</p>
     </section>
-      <section class="section">
-  <form action="#" method="post" novalidate>
-    <div class="form-row">
-      <label for="full-name">Full Name</label>
-      <input id="full-name" name="full-name" type="text" required>
-    </div>
 
-    <div class="form-row">
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required>
-    </div>
+    <section class="section">
+      <!-- FormSubmit using Gmail (activated) -->
+      <form action="https://formsubmit.co/lauren.souris3@gmail.com" method="POST" onsubmit="showThanks()">
+        <!-- Spam (hidden) -->
+        <input type="text" name="_honey" style="display:none">
+        <!-- Options: nicer email + redirect after submit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New message from portfolio contact form">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
 
-    <div class="form-row">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-    </div>
-<p> 
-    <!--  Radrio and checkboxes  -->
-  </form>
-  <fieldset>
-    <legend>Reason for contact</legend>
-    <section class="form-options">
-  <label><input type="radio" name="reason" value="teaching" required> Teaching position</label>
-  <label><input type="radio" name="reason" value="learning-support"> Learning Support</label>
-  <label><input type="radio" name="reason" value="general"> General enquiry</label>
-  <fieldset>
-  <legend>Areas of interest</legend>
-  <label><input type="checkbox" name="interests" value="food-tech"> Food Technology </label>
-  <label><input type="checkbox" name="interests" value="industrial-arts"> Industrial Arts</label>
-  <label><input type="checkbox" name="interests" value="resources"> Resources / Units</label>
-    <label><input type="checkbox" name="interests" value="resources"> Other</label>
-</section>
+        <div class="form-row">
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="full-name" type="text" required>
+        </div>
 
-</fieldset>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
 
-</section>
-<div class="form-row">
-        <ul>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
 
-    <button type="submit">Send</button>
+        <!-- Radio: reason (choose one) -->
+        <fieldset>
+          <legend>Reason for contact</legend>
+          <label><input type="radio" name="reason" value="teaching" required> Teaching position</label>
+          <label><input type="radio" name="reason" value="learning-support"> Learning Support</label>
+          <label><input type="radio" name="reason" value="general"> General enquiry</label>
+        </fieldset>
 
+        <!-- Alternate note above checkboxes -->
+        <p>If you’re comfortable, please tick any areas that interest you below. This simply helps me respond more thoughtfully and share the most helpful resources.</p>
 
-</section>
+        <!-- Checkboxes: interests (choose any) -->
+        <fieldset>
+          <legend>Areas of interest</legend>
+          <label><input type="checkbox" name="interests" value="food-tech"> Food Technology</label>
+          <label><input type="checkbox" name="interests" value="industrial-arts"> Industrial Arts</label>
+          <label><input type="checkbox" name="interests" value="resources"> Resources / Units</label>
+          <label><input type="checkbox" name="interests" value="other"> Other</label>
+        </fieldset>
 
-<p>If none of these options fit, please feel free to email me directly, using the email below:</p>
-      <ul>
-        <li>Email: <a class="inline" href="S00312092@myacu.edu.com">S00312092@myacu.edu.au</a></li>
- 
+        <button type="submit">Send</button>
+      </form>
+
+      <!-- Alternate contact line -->
+      <p style="margin-top:1rem;">If none of these options fit, please feel free to email me directly at
+        <a class="inline" href="mailto:S00312092@myacu.edu.au">S00312092@myacu.edu.au</a>.
+      </p>
+    </section>
   </main>
 
   <footer>© 2025 Lauren Souris. All rights reserved.</footer>
+
+  <!-- Minimal JS for the popup -->
+  <script>
+    function showThanks() {
+      // Fires only if the form passes HTML5 validation
+      alert('Thank you! Your form has been submitted.');
+      // Once ok has been pressed /redirect normally
+    }
+  </script>
 </body>
 </html>
