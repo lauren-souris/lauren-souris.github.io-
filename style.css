@@ -1,156 +1,534 @@
-/*Laurne Souris site styles*/
+/* =========================================================
+   Lauren Souris — Site Styles
+   ========================================================= */
 
-/* Design main */
-:root{
-  --text: #05070c;
-  --muted:#6b7280;
-  --line: #e5e7eb;
+/* ----------------- Theme ----------------- */
+/* ----------------- Base ----------------- */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 
-  --card:#ffffff;
-  --bg:  #cadcc3;
-
-  --brand:#111827;            /* used for accents if needed */
-  --header-bg:#5b7774;        /* top bar background */
-  --link:#437a49;             /* default page link colour */
-  --nav-link:#ffffff;         /* top nav link colour */
-  --nav-active-pill: rgba(255,255,255,.16);
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #05070c;              /* text */
+  background: #b1d7ec;         /* page background */
+  line-height: 1.6;
 }
 
-/* --- Base --- */
-*{ box-sizing:border-box; }
-html, body{ height:100%; }
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.6;
+img { max-width: 100%; height: auto; display: block; }
+
+/* ----------------- Header & Nav ----------------- */
+header {
+  background: #a3cdc9;         /* header background */
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky; top: 0; z-index: 50;
 }
 
-/* ===============================
-   Header + Navigation
-   =============================== */
-header{
-  background:var(--header-bg);
-  border-bottom:1px solid var(--line);
-  position:sticky; top:0; z-index:50;
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.nav{
-  max-width:1100px; margin:0 auto;
-  padding:.85rem 1.25rem;
-  display:flex; align-items:center; justify-content:space-between;
-}
-.brand{ font-weight:700; letter-spacing:.4px; }
-nav ul{ list-style:none; display:flex; gap:.5rem; margin:0; padding:0; }
 
-/* Top-nav links (white) */
-nav a{
-  text-decoration:none;
-  color:var(--nav-link);
-  padding:.5rem .75rem;
-  border-radius:.6rem;
+.brand { font-weight: 700; letter-spacing: 0.4px; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
 }
+
+nav a {
+  text-decoration: none;
+  color: #17543d;              /* nav link text */
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+}
+
 nav a:hover,
-nav a:focus{ text-decoration:underline; }
-nav a.active{
-  color:#fff;
-  background:var(--nav-active-pill);
+nav a:focus { text-decoration: underline; }
+
+nav a.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16); /* active pill */
 }
 
-/* ===============================
-   Main layout + footer
-   =============================== */
-main{ max-width:1100px; margin:2rem auto; padding:0 1.25rem; }
-footer{
-  margin-top:3rem; background:#fff; border-top:1px solid var(--line);
-  text-align:center; padding:1rem; color:var(--muted);
+/* ----------------- Layout & Footer ----------------- */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
 }
 
-/* ===============================
-   Reusable UI
-   =============================== */
-.grid{ display:flex; flex-wrap:wrap; gap:1rem; }
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:1rem;
-  padding:1rem;
-  flex:1 1 300px;
-  box-shadow:0 2px 6px rgba(0,0,0,.05);
+footer {
+  margin-top: 3rem;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;              /* muted text */
 }
-.hero{ display:flex; gap:2rem; align-items:center; flex-wrap:wrap; }
-.hero img{ width:220px; height:220px; border-radius:50%; object-fit:cover; }
 
-/* Images */
-img{ max-width:100%; height:auto; display:block; }
+/* ----------------- Reusable UI ----------------- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
-/* Page links (green) — outside the top nav */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1 1 300px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Links inside content (green) */
 main a,
 .card a,
-a.inline{
-  color:var(--link);
+a.inline {
+  color: #2a572f;
 }
 main a:hover,
-main a:focus{ text-decoration:underline; }
+main a:focus {
+  text-decoration: underline;
+}
 
 /* Tables */
-.table-wrap{ overflow-x:auto; }
-table{ width:100%; border-collapse:collapse; }
-th, td{ padding:.75rem; border:1px solid var(--line); text-align:left; }
-thead th{ background:#fafafa; }
-
-/* ===============================
-   Projects / Resources
-   =============================== */
-.projects{ display:flex; flex-wrap:wrap; gap:1rem; }
-.project-card{ flex:1 1 300px; }
-.project-card h3{ margin-top:.25rem; }
-.tag{
-  display:inline-block; padding:.15rem .5rem; border-radius:.5rem;
-  background:#eef2ff; font-size:.85rem;
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
 }
+thead th { background: #fafafa; }
 
-/* Project images: rounded edgess */
-.project-card img{
-  border-radius:16px;     /* tweak 8–24px to taste */
-  display:block;
-  width:100%;
-  height:auto;
-}
 
-/* ===============================
-   Forms (Contact)
-   =============================== */
-fieldset{
-  border:1px solid var(--line);
-  border-radius:.6rem;
-  padding:.75rem;
-  margin-bottom:1rem;
-}
-legend{ font-weight:600; padding:0 .25rem; }
-fieldset label{ display:block; margin-bottom:.35rem; }
 
-/* Stacked form layout: label above input */
-.form-row{
-  display:flex; flex-direction:column; gap:.35rem;
-  margin-bottom:1rem;
+/* =========================================================
+   PAGES
+   ========================================================= */
+   /* ----------------- Forms (Contact)  ----------------- */
+fieldset {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
 }
-input, textarea, select, button{
-  font:inherit;
-  padding:.65rem .75rem;
-  border:1px solid var(--line);
-  border-radius:.6rem;
-  width:100%;
+legend { font-weight: 600; padding: 0 4px; }
+fieldset label { display: block; margin-bottom: 6px; }
+.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+
+input, textarea, select, button {
+  font: inherit;
+  padding: 10px 12px;
+  border: 2cap solid #ffffff;   
+  border-radius: 10px;
+  width: 100%;
 }
 
-/* Visible keyboard focus for accessibility */
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline:2px solid var(--link);
-  outline-offset:2px;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #24629f;  /* focus outline */
+  outline-offset: 2px;
 }
-button{
-  background:var(--link);
-  color:#fff;
-  border:none;
-  cursor:pointer;
+
+button {
+  background: #24629f;          /* pirmary  */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
+
+/* Contact page resume button colours */
+.contact-page a[href^="mailto:"],
+.contact-page .email-cta {
+  display: inline-block;
+  padding: 12px 28px;
+  min-width: 260px;
+  text-align: center;
+  margin: 8px 0;
+  background: #ffffff;
+  color: #98bfc3;
+  border: 1px solid #ffffff;
+  text-decoration: none;
+}
+
+.contact-page a[href^="mailto:"]:hover,
+.contact-page .email-cta:hover {
+  background: #f5f8ff;
+  border-color: #ffffff;
+}
+
+
+/* ----------------- HOME (index.html) ----------------- */
+/* Hero image belt */
+.hero-belt {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+.hero-belt img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.hero-belt .is-center {
+  width: 160px;
+  height: 160px;
+}
+
+/* Keep hero text from squishing */
+.hero > div {
+  flex: 1 1 380px;
+  min-width: 320px;
+}
+
+/* Highlights bubbles */
+section[aria-labelledby="highlights"] .card {
+  background: #98bfc3;
+  border: 3px solid #2f4087c6;
+  color: #1e1e1e;
+  border-radius: 16px;
+}
+
+/* ----------------- RESUME ----------------- */
+/* --- Resume page buttons --- */
+.section a.inline,
+.section a.inLine {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 4px solid #0c2f17;     /*  border colour */
+  border-radius: 999px;
+  background: #ffffff;           /*  button background */
+  color: #1749b6;                /*  link text colour */
+  text-decoration: none;
+  margin-right: 8px;
+}
+.section a.inline:hover,
+.section a.inLine:hover {
+  background: #f5f8ff;
+  border-color: #aebbd3;
+}
+
+/* --- Resume page bubbles --- */
+.resume-page .card {
+  background: #98bfc3;           /* bubble background colour */
+  border: 2px solid #2f4087;     /* bubble border colour & thickness */
+  border-radius: 10px;           /* smaller corners */
+  padding: 12px;                 /* smaller bubble */
+  color: #1e1e1e;                /* text colour */
+}
+
+/* Center headings inside bubbles (slightly smaller to match bubble size) */
+.resume-page .card h2,
+.resume-page .card h3 {
+  text-align: center;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 1.1rem;             /* smaller heading */
+}
+
+/* Simple table inside Fast Facts */
+.resume-page .table-wrap table { width: 100%; border-collapse: collapse; }
+.resume-page .table-wrap th,
+.resume-page .table-wrap td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: left;
+}
+
+
+/* ----------------- PHILOSOPHY ----------------- */
+/* Philosophy page (basic) */
+.philosophy-page .intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+}
+.philosophy-page .intro h1 {
+  margin: 0 0 .5rem;
+}
+.philosophy-page .intro .lead {
+  max-width: 65ch;
+  margin: .5rem auto 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.philosophy-page .hero-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Core beliefs */
+.philosophy-page .beliefs {
+  max-width: 1000px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+.philosophy-page .beliefs h2 {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+.philosophy-page .beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .philosophy-page .beliefs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .philosophy-page .beliefs-grid { grid-template-columns: 1fr; }
+}
+
+.philosophy-page .belief-bubble {
+  background: #3e8990;
+  border: 3px solid #2f4087c6;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.philosophy-page .belief-bubble h3 {
+  margin: 0 0 .5rem;
+  font-size: 1rem;
+}
+.philosophy-page .belief-bubble p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+.philosophy-page .belief-bubble img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: .75rem;
+}
+
+/* ----------------- EXPERIENCE ----------------- */
+/* --- Experience page bubbles  --- */
+.experience-page .card {
+  background: #98bfc3;      /* bubble background */
+  border: 3px solid #2f4087;/* border colour & thickness */
+  border-radius: 12px;
+  padding: 16px;
+  color: #1e1e1e;
+}
+
+/* Image on right, text wraps left */
+.experience-page img[src*="classroom"] {
+  float: right;
+  width: 40%;
+  max-width: 380px;
+  height: auto;
+  margin: 0 0 1rem 1rem;
+  border-radius: 12px;
+}
+
+/* Clear floats */
+.experience-page main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ----------------- HOME PAGE ----------------- */
+/* Home hero:  */
+.hero--stacked { display: block; }
+
+.hero--stacked .hero-belt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: nowrap;     /* keep all bubbles on one line */
+  margin-bottom: 1rem;
+}
+
+.hero--stacked .hero-belt img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero--stacked .hero-belt .is-center {
+  width: 240px;          /* profile slightly bigger */
+  height: 240px;
+}
+
+.hero--stacked .hero-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;    /* center “Welcome!” */
+}
+
+#highlights {            /* center “Highlights” */
+  text-align: center;
+}
+/* Center  headings inside the Home > Highlights bubbles */
+section[aria-labelledby="highlights"] .card h3 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----------------- About PAGE ----------------- */
+/* About page two-column layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px; /* text | image */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.about-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px; /* optional */
+}
+
+/* ----------------- Projects / Resources ----------------- */
+/* ----------------- PROJECTS ----------------- */
+
+/* Layout */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Project bubble (card) */
+.project-card {
+  flex: 1 1 380px;
+  width: 400px;              /* consistent row width */
+  height: 620px;             /* same height for all */
+  box-sizing: border-box;
+
+  background: #98bfc3;       /*  projects bubble colour */
+  border: 2px solid #2f4087; /* projects border colour/thickness */
+  border-radius: 18px;
+  padding: 16px;
+  color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings + text */
+.project-card h3 { margin: 8px 0; text-align: center; }
+.project-card p  { margin-top: 8px; overflow-wrap: anywhere; }
+
+/* Tag chip */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #e0e7ff;
+  font-size: 0.85rem;
+}
+
+/* Images (no crop) */
+.project-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background: #eefbfc;       /* contrast */
+  border: none;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+/* Split layout for one special project card */
+.project-split { display: flex; gap: 12px; align-items: flex-start; }
+.project-split.image-left { flex-direction: row-reverse; }
+.project-split img {
+  flex: 0 0 42%;
+  max-width: 42%;
+  height: auto;
+  object-fit: contain;
+  border: 0;
+  border-radius: 12px;
+  margin: 0;
+  align-self: flex-start;
+}
+.project-split .content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------- RESOURCES ----------------- */
+/* Layout */
+.resources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Resource bubble (card) */
+.resource-card {
+  flex: 1 1 380px;
+  width: 400px;              /* keep same sizing as projects */
+  height: 620px;
+  box-sizing: border-box;
+
+  background: #98bfc3;       /* EDIT: resources bubble colour */
+  border: 2px solid #4f7fd2; /* EDIT: resources border colour/thickness */
+  border-radius: 18px;
+  padding: 16px;
+  color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings + text */
+.resource-card h3 { margin: 8px 0; text-align: center; }
+.resource-card p  { margin-top: 8px; overflow-wrap: anywhere; }
+
+/* Images (no crop) */
+.resource-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
